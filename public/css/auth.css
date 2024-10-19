@@ -8,10 +8,12 @@ section, header{
 
 body{
     height: 100vh;
+    background: linear-gradient(rgb(38, 228, 0), rgb(0, 0, 0)), url('../img/bg.jpg');
 }
 
 h1{
     text-align: center;
+    color: #fff;
 }
 
 ul{
@@ -19,6 +21,7 @@ ul{
     display: flex;
     border: 2px solid black;
     padding-left: 0 !important;
+    background-color: #fff;
 }
 
 li{
@@ -33,6 +36,7 @@ li a{
 }
 
 form{
+    background-color: #fff;
     margin-top: 10%;
     padding: 20px;
     width: 100%;

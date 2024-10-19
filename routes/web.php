@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->middleware(['auth',])->name('home');
 
 // Rotas de Autenticação
 
@@ -25,19 +26,22 @@ Route::get('/auth/login', function () {
     return view('auth/login');
 })->name('login');
 
-Route::post('/auth/login', function () {
-    return redirect('/');
-});
+Route::post('/auth/login', [LoginController::class,'authenticate']);
+
 
 Route::get('/auth/register', function () {
     return view('auth/register');
 })->name('register');
 
+Route::post('/auth/register', [LoginController::class,'register']);
+
+
 Route::get('/auth/forgot', function () {
     return view('auth/forgot');
 })->name('forgotpass');
 
-Route::get('/auth/logout', function () {
-    return redirect('/');
-});
+Route::post('/auth/forgot', [LoginController::class, 'forgot'])->name('forgotpass');
+
+
+Route::get('/auth/logout', [LoginController::class,'logout'])->name('logout');
 
