@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\NetworkTrafficController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,10 @@ use App\Http\Controllers\LoginController;
 Route::get('/', function () {
     return view('home');
 })->middleware(['auth',])->name('home');
+
+// End Point de Envio de Pacotes
+
+Route::post('/send', [NetworkTrafficController::class, 'send'])->name('send');
 
 // Rotas de Autenticação
 
