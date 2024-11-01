@@ -34,7 +34,6 @@ Route::get('/networkConfig', [AppController::class, 'networkConfig'])->middlewar
 
 Route::get('/accountConfig', [AppController::class, 'accountConfig'])->middleware(['auth',])->name('accountConfig');
 
-
 // End Point de Envio de Pacotes
 
 Route::post('/send', [NetworkTrafficController::class, 'send'])->name('send');
