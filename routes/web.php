@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NetworkTrafficController;
+use App\Http\Controllers\AppController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,22 @@ use App\Http\Controllers\NetworkTrafficController;
 
 // Rota Padrão
 
-Route::get('/', function () {
-    return view('home');
-})->middleware(['auth',])->name('home');
+Route::get('/', [AppController::class, 'index'])->middleware(['auth',])->name('home');
+
+Route::get('/alerts', [AppController::class, 'alerts'])->middleware(['auth',])->name('alerts');
+
+Route::get('/newConnection', [AppController::class, 'newConnection'])->middleware(['auth',])->name('newConnection');
+
+Route::get('/security', [AppController::class, 'security'])->middleware(['auth',])->name('security');
+
+Route::get('/management', [AppController::class, 'management'])->middleware(['auth',])->name('management');
+
+Route::get('/help', [AppController::class, 'help'])->middleware(['auth',])->name('help');
+
+Route::get('/networkConfig', [AppController::class, 'networkConfig'])->middleware(['auth',])->name('networkConfig');
+
+Route::get('/accountConfig', [AppController::class, 'accountConfig'])->middleware(['auth',])->name('accountConfig');
+
 
 // End Point de Envio de Pacotes
 
