@@ -1,26 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/all.css">
-    <link rel="stylesheet" href="../css/home.css">
-    <script src="../js/header.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="../css/app.css" rel="stylesheet">
+    <title>Dashboard | Netmon</title>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-
-    <title> {{ $page }} | Netmon</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
-<div class="container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <button onclick="homeTab()" ><i class="ph ph-house"></i> HOME</button>
-            <button onclick="alertsTab()" ><i class="ph ph-warning"></i> ALERTS</button>
-            <button onclick="newConnectionTab()" ><i class="ph ph-cell-signal-high"></i> NEW CONNECTION</button>
-            <button onclick="securityTab()" ><i class="ph ph-lock-key"></i> SECURITY</button>
-            <button onclick="managementTab()" ><i class="ph ph-kanban"></i> MANAGEMENT</button>
-            <button onclick="helpTab()" ><i class="ph ph-question-mark"></i> HELP</button>
-            <button onclick="networkConfigTab()" ><i class="ph ph-cell-tower"></i> NETWORK CONFIGS</button>
-            <button onclick="accountConfigTab()" ><i class="ph ph-user-gear"></i> ACCOUNT CONFIGS</button>
-            <button onclick="logout()" ><i class="ph ph-sign-out"></i> LOGOUT</button>
-        </aside>
+
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+    <div class="sidebar" id="sidebar">
+        <br>
+        <div class="d-flex justify-content-center align-items-center">
+            <img width="80%" src="../images/logo-2.png" alt="">
+        </div>
+        <ul>
+            <li><a href="{{ route('home') }}"><i class="ph ph-house"></i> Home</a></li>
+            <div>
+                <hr>
+                <span>Network</span>
+                <li><a href="{{ route('alerts') }}"><i class="ph ph-warning"></i> Alerts</a></li>
+                <li><a href="{{ route('newConnection') }}"><i class="ph ph-wifi-high"></i> New Connection</a></li>
+                <li><a href="{{ route('networkConfig') }}"><i class="ph ph-faders"></i> Network Configs</a></li>
+                <li><a href="{{ route('security') }}"><i class="ph ph-fingerprint"></i> Security</a></li>
+                <li><a href="{{ route('management') }}"><i class="ph ph-kanban"></i> Management</a></li>
+            </div>
+            <div>
+                <hr>
+                <span>Help</span>
+                <li><a href="{{ route('accountConfig') }}"><i class="ph ph-user-gear"></i> Account Configs</a></li>
+                <li><a href="{{ route('help') }}"><i class="ph ph-question"></i> Help</a></li>
+                <hr>
+            </div>
+            <li><a href="{{ route('logout') }}"><i class="ph ph-sign-out"></i> Log out</a></li>
+        </ul>
+        <hr>
+        <span style="padding: 20px">
+            &copy; Netmon
+        </span>
+    </div>
