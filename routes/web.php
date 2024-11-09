@@ -63,3 +63,6 @@ Route::post('/auth/forgot', [LoginController::class, 'forgot'])->name('forgotpas
 
 Route::get('/auth/logout', [LoginController::class,'logout'])->name('logout');
 
+Route::fallback(function () {
+    return redirect()->route('home'); // redireciona para outra rota
+});

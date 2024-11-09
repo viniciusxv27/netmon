@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
@@ -5,11 +6,15 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    background-color: #ecf0f1;
+    background-color: #2c2c2c;
 }
 
 .header {
     width: 100%;
+}
+
+.header h2 {
+    color: #e65c00;
 }
 
 table{
@@ -20,8 +25,8 @@ table{
 
 .sidebar {
     width: 300px;
-    background-color: #0021b4;
-    color: #fff;
+    background-color: #1e1e1e;
+    color: #ff6600;
     height: 100vh;
     box-sizing: border-box;
     position: fixed;
@@ -52,7 +57,7 @@ table{
     display: block;
     padding: 10px;
     transition: all .4s;
-    border-radius: 0;
+    border-radius: 20px;
 }
 
 .sidebar ul div {
@@ -75,7 +80,7 @@ table{
 }
 
 .sidebar ul li a:hover {
-    background-color: #75a5ff6b;
+    background-color: #ffa8756b;
 }
 
 .menu-toggle {
@@ -98,7 +103,6 @@ table{
     flex-wrap: wrap;
     gap: 20px;
     flex: 1;
-    background-color: #ecf0f1;
     padding: 20px;
     box-sizing: border-box;
     margin-left: 300px;
