@@ -27,13 +27,10 @@
                     <div class="d-grid">
                         <button class="btn btn-primary" type="submit">Send Email</button>
                     </div>
-                    <div class="text-center mt-3">
-                        <a href="{{ route('forgotpass') }}">Forgot my password</a>
-                    </div>
                 </form>
                 <hr>
                 <div class="text-center">
-                    <p>Don't have an account? <a href="{{ route('register') }}">Sign-up</a></p>
+                    <p>Remember your password? <a href="{{ route('login') }}"> Log-in</a></p>
                 </div>
                 @if ($errors->any())
                     @foreach ($errors->all() as $error)

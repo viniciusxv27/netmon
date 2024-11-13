@@ -23,21 +23,21 @@
             <img width="80%" src="{{ asset('images/logo-resize.png') }}" alt="">
         </div>
         <ul>
-            <li><a href="{{ route('home') }}"><i class="ph ph-house"></i> Home</a></li>
+            <li><a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}"><i class="ph ph-house"></i> Home</a></li>
             <div>
                 <hr>
                 <span>Network</span>
-                <li><a href="{{ route('alerts') }}"><i class="ph ph-warning"></i> Alerts</a></li>
-                <li><a href="{{ route('newConnection') }}"><i class="ph ph-wifi-high"></i> New Connection</a></li>
-                <li><a href="{{ route('networkConfig') }}"><i class="ph ph-faders"></i> Network Configs</a></li>
-                <li><a href="{{ route('security') }}"><i class="ph ph-fingerprint"></i> Security</a></li>
-                <li><a href="{{ route('management') }}"><i class="ph ph-kanban"></i> Management</a></li>
+                <li><a href="{{ route('alerts') }}" class="{{ request()->routeIs('alerts') ? 'active' : '' }}"><i class="ph ph-warning"></i> Alerts</a></li>
+                <li><a href="{{ route('newConnection') }}" class="{{ request()->routeIs('newConnection') ? 'active' : '' }}"><i class="ph ph-wifi-high"></i> New Connection</a></li>
+                <li><a href="{{ route('networkConfig') }}" class="{{ request()->routeIs('networkConfig') ? 'active' : '' }}"><i class="ph ph-faders"></i> Network Configs</a></li>
+                <li><a href="{{ route('security') }}" class="{{ request()->routeIs('security') ? 'active' : '' }}"><i class="ph ph-fingerprint"></i> Security</a></li>
+                <li><a href="{{ route('management') }}" class="{{ request()->routeIs('management') ? 'active' : '' }}"><i class="ph ph-kanban"></i> Management</a></li>
             </div>
             <div>
                 <hr>
                 <span>Help</span>
-                <li><a href="{{ route('accountConfig') }}"><i class="ph ph-user-gear"></i> Account Configs</a></li>
-                <li><a href="{{ route('help') }}"><i class="ph ph-question"></i> Help</a></li>
+                <li><a href="{{ route('accountConfig') }}" class="{{ request()->routeIs('accountConfig') ? 'active' : '' }}"><i class="ph ph-user-gear"></i> Account Configs</a></li>
+                <li><a href="{{ route('help') }}" class="{{ request()->routeIs('help') ? 'active' : '' }}"><i class="ph ph-question"></i> Help</a></li>
                 <hr>
             </div>
             <li><a href="{{ route('logout') }}"><i class="ph ph-sign-out"></i> Log out</a></li>

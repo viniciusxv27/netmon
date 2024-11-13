@@ -1,29 +1,33 @@
-<main>
-            <!-- Header -->
-            <header class="header">
-                <input type="text" placeholder="Select the network">
-                <button>&#9658;</button>
-                <div class="user-info">
-                    <span>Username</span>
-                    <span class="user-icon">&#128100;</span>
-                </div>
-            </header>
+<div class="main-content">
+    <div>
+        <div class=" card">
+            <div class="card-header">
+                <h4 class="card-title"><i class="ph ph-wifi-high"></i> Connect to a new network</h4>
+            </div>
+            <div class="card-body">
+                <form action="{{ route('newConnection') }}" method="post">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="connectionkName" class="form-label">Connection name:</label>
+                        <input class="form-control" type="text" name="connectionkName" id="connectionkName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="networkName" class="form-label">Network name:</label>
+                        <input class="form-control" type="text" name="networkName" id="networkName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="networkInterfaceName" class="form-label">Network interface name:</label>
+                        <input class="form-control" type="text" name="networkInterfaceName" id="networkInterfaceName" required>
+                    </div>
 
-            <!-- Connection Form -->
-            <section class="connection-form">
-                <h2>Connect to a new Network</h2>
-                <form>
-                    <label for="connection-name">Connection name:</label>
-                    <input type="text" id="connection-name" placeholder="Enter connection name">
+                    <div class="mb-3 container text-center">
+                        <input class="btn btn-primary" type="submit" value="Generate and download">
+                    </div>
 
-                    <label for="network-name">Network name:</label>
-                    <input type="text" id="network-name" placeholder="Enter network name">
-
-                    <label for="interface-name">Network Interface name:</label>
-                    <input type="text" id="interface-name" placeholder="Enter interface name">
-
-                    <button type="button" class="download-btn">Generate and download</button>
-                    <button type="button" class="manual-btn">Download the manual of how to install</button>
+                    <div class="mb-3 container text-center">
+                        <a href="manual.pdf">Download the manual of how to install</a>
+                    </div>
                 </form>
-            </section>
-        </main>
+        </div>
+    </div>
+</div>

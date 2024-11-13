@@ -83,6 +83,11 @@ table{
     background-color: #ffa8756b;
 }
 
+.sidebar ul li .active {
+    background-color: #2c2c2c;
+    color: #e65c00;
+}
+
 .menu-toggle {
     background-color: #f08700;
     color: #ecf0f1;
@@ -100,6 +105,7 @@ table{
 
 .main-content {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
     flex: 1;
@@ -133,6 +139,52 @@ table{
 #graficoFaturamento{
     width: 40%;
     height: auto;
+}
+
+.card {
+    background-color: #1e1e1e !important;
+}
+
+.card h4 {
+    color: #e65c00;
+}
+
+.card p {
+    color: #ff6600;
+}
+
+.form-label {
+    color: #ff6600;
+}
+
+.form-control {
+    background-color: #2c2c2c;
+    color: #ff6600;
+    border: 0;
+}
+
+.form-control:focus {
+    background-color: #2c2c2c;
+    color: #ff6600;
+}
+
+.card .btn {
+    width: 100%;
+    background-color: #e65c00;
+    color: #ecf0f1;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .3s;
+}
+
+.card .btn:hover {
+    background-color: #f08700;
+}
+
+.card a{
+    color: #e65c00;
 }
 
 @media (max-width: 768px) {

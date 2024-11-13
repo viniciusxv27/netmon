@@ -21,7 +21,7 @@
                 <form action="{{ route('register') }}" method="post">
                     @csrf
                     <div class="mb-3">
-                        <label for="name" class="form-label">Email:</label>
+                        <label for="name" class="form-label">Name:</label>
                         <input autocomplete="username" class="form-control" type="text" name="name" id="name" required>
                     </div>
                     <div class="mb-3">
@@ -33,7 +33,7 @@
                         <input autocomplete="current-password" class="form-control" type="password" name="password" id="password" required>
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">Confirm Password:</label>
+                        <label for="confirm-password" class="form-label">Confirm Password:</label>
                         <input autocomplete="current-password" class="form-control" type="password" name="confirm-password" id="confirm-password" required>
                     </div>
                     <div class="d-grid">
