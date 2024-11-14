@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/waveform.js"></script>
+    <script src="{{ asset('js/auth.js') }}" defer></script>
     <title>Netmon | Reset Password</title>
 </head>
 
@@ -19,7 +21,7 @@
                     <img src="{{ asset('images/logo-resize.png') }}" alt="NetMon Logo"
                         style="max-width: 100%; height: auto;">
                 </div>
-                <form action="{{ route('password.update') }}" method="post">
+                <form action="{{ route('password.update') }}" id="authForm" method="post">
                     @csrf
                     <input type="hidden" name="token" value="{{ request('token') }}">
                     <input type="hidden" name="email" value="{{ request('email') }}">
@@ -34,7 +36,7 @@
                             name="password_confirmation" id="password_confirmation" required>
                     </div>
                     <div class="d-grid">
-                        <button class="btn btn-primary" type="submit">Update password</button>
+                        <button class="btn btn-primary" id="submitButton" type="submit">Update password</button>
                     </div>
                 </form>
                 <hr>

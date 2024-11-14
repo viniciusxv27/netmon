@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ asset('css/auth.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/waveform.js"></script>
+    <script src="{{ asset('js/auth.js') }}" defer></script>
     <title>Netmon | Forgot</title>
 </head>
 
@@ -16,16 +18,18 @@
         <div class="card shadow-lg p-4" style="width: 100%; max-width: 400px;">
             <div class="card-body">
                 <div class="text-center mb-4">
-                    <img src="{{ asset('images/logo-resize.png') }}" alt="NetMon Logo" style="max-width: 100%; height: auto;">
+                    <img src="{{ asset('images/logo-resize.png') }}" alt="NetMon Logo"
+                        style="max-width: 100%; height: auto;">
                 </div>
-                <form action="{{ route('forgotpass') }}" method="post">
+                <form action="{{ route('forgotpass') }}" id="authForm" method="post">
                     @csrf
                     <div class="mb-3">
                         <label for="email" class="form-label">Email:</label>
-                        <input autocomplete="email" class="form-control" type="email" name="email" id="email" required>
+                        <input autocomplete="email" class="form-control" type="email" name="email" id="email"
+                            required>
                     </div>
                     <div class="d-grid">
-                        <button class="btn btn-primary" type="submit">Send Email</button>
+                        <button class="btn btn-primary" id="submitButton" type="submit">Send Email</button>
                     </div>
                 </form>
                 <hr>
@@ -44,4 +48,5 @@
     </div>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </body>
+
 </html>
