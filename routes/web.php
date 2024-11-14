@@ -32,8 +32,10 @@ Route::get('/management', [AppController::class, 'management'])->middleware(['au
 Route::get('/help', [AppController::class, 'help'])->middleware(['auth',])->name('help');
 
 Route::get('/networkConfig', [AppController::class, 'networkConfig'])->middleware(['auth',])->name('networkConfig');
+Route::get('configNetwork', [AppController::class, 'configNetwork'])->middleware(['auth',])->name('configNetwork');
 
 Route::get('/accountConfig', [AppController::class, 'accountConfig'])->middleware(['auth',])->name('accountConfig');
+Route::get('/configAccount', [AppController::class, 'configAccount'])->middleware(['auth',])->name('configAccount');
 
 // End Point de Envio de Pacotes
 

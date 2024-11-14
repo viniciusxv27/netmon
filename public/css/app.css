@@ -89,7 +89,7 @@ table{
 }
 
 .menu-toggle {
-    background-color: #f08700;
+    background-color: #e65c00;
     color: #ecf0f1;
     border: none;
     padding: 10px 15px;
@@ -158,7 +158,7 @@ table{
     color: #fff;
 }
 
-.card .btn {
+.card .btn-primary {
     width: 100%;
     background-color: #e65c00;
     color: #ecf0f1;
@@ -169,8 +169,23 @@ table{
     transition: all .3s;
 }
 
-.card .btn:hover {
+.card .btn-primary:hover {
     background-color: #f08700;
+}
+
+.card .btn-danger{
+    width: 100%;
+    background-color: #ff0000;
+    color: #ecf0f1;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .3s;
+}
+
+.card .btn-danger:hover {
+    background-color: #ff3333;
 }
 
 @media (max-width: 768px) {

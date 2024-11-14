@@ -22,7 +22,7 @@
                     </div>
 
                     <div class="mb-3 container text-center">
-                        <button class="btn btn-primary" id="submitButton" type="submit">Generate and download</button>
+                        <button class="btn btn-primary" id="submitButton" type="submit"><i class="ph ph-download-simple"></i> Generate and download</button>
                     </div>
 
                     <div class="mb-3 container text-center">
