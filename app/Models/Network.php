@@ -19,6 +19,7 @@ class Network extends Authenticatable
      */
     protected $fillable = [
         'user_id',
+        'connection_name',
         'network_name',
         'interface',
     ];

@@ -18,9 +18,18 @@ class NetworkTraffic extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'network',
+        'mac_origin',
+        'mac_destination',
+        'protocol_version',
+        'ip_origin',
+        'ip_destination',
+        'protocol',
+        'ttl',
+        'origin_port',
+        'destination_port',
+        'flag',
+        'application_protocol'
     ];
 
     /**
@@ -29,8 +38,6 @@ class NetworkTraffic extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'password',
-        'remember_token',
     ];
 
     /**
@@ -39,6 +46,5 @@ class NetworkTraffic extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
     ];
 }
