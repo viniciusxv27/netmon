@@ -23,6 +23,7 @@ Route::get('/', [AppController::class, 'index'])->middleware(['auth',])->name('h
 Route::get('/alerts', [AppController::class, 'alerts'])->middleware(['auth',])->name('alerts');
 
 Route::get('/newConnection', [AppController::class, 'newConnection'])->middleware(['auth',])->name('newConnection');
+Route::post('/newConnection', [AppController::class, 'createConnection'])->middleware(['auth',])->name('createConnection');
 
 Route::get('/security', [AppController::class, 'security'])->middleware(['auth',])->name('security');
 

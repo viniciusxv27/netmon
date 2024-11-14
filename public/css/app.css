@@ -13,8 +13,8 @@ body {
     width: 100%;
 }
 
-.header h2 {
-    color: #e65c00;
+.header h2, hr {
+    color: #e65c00 !important;
 }
 
 table{
@@ -114,6 +114,7 @@ table{
     box-sizing: border-box;
     margin-left: 300px;
     transition: margin-left 0.3s ease;
+    height: 100vh;
 }
 
 .main-content.collapsed {

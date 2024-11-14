@@ -16,7 +16,6 @@ class CreateNetworksTable extends Migration
         Schema::create('networks', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('network_ip');
             $table->string('connection_name');
             $table->string('network_name');
             $table->string('interface');

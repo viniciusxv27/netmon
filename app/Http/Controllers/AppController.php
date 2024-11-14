@@ -62,6 +62,21 @@ class AppController extends Controller
         return view('__header', $data) . view('accountConfig', $data) . view('__footer');
     }
 
-    
+    public function createConnection(Request $request)
+    {
+        $data = $request->validate([
+            'connection_name'=> 'required',
+            'network_name'=> 'required',
+            'interface'=> 'required',
+        ]);
+
+        $data['user_id'] = session()->get('user')->id;
+
+        Network::create($data);
+
+        session()->flash('success','Connection created successfully!');
+
+        return redirect('/newConnection');
+    }
 
 }
