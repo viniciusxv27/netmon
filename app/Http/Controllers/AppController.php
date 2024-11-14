@@ -51,6 +51,7 @@ class AppController extends Controller
     public function networkConfig(Request $request)
     {
         $data['page'] = 'Network Configs';
+        $data['networks'] = Network::where('user_id', session()->get('user')->id)->get();
 
         return view('__header', $data) . view('networkConfig', $data) . view('__footer');
     }

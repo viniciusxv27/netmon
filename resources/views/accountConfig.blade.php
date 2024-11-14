@@ -6,7 +6,7 @@
                 <hr>
             </div>
             <div class="card-body">
-                <form action="{{ route('configAccount') }}" id="configAccountForm" method="post">
+                <form action="{{ route('accountUpdate') }}" id="configAccountForm" method="post">
                     @csrf
                     <div class="mb-3">
                         <label for="name" class="form-label">Name:</label>

@@ -6,7 +6,13 @@
                 <hr>
             </div>
             <div class="card-body">
-                <form action="{{ route('configNetwork') }}" id="configNetworkForm" method="post">
+                <select class="mb-3 form-select" name="networkSelect" id="networkSelect">
+                    <option value="0">Select a network</option>
+                    @foreach ($networks as $network)
+                        <option value="{{ $network->id }}">{{ $network->network_name }}</option>
+                    @endforeach
+                </select>
+                <form action="{{ route('configUpdate') }}" id="configNetworkForm" method="post">
                     @csrf
                     <div class="mb-3">
                         <label for="connection_name" class="form-label">Connection name:</label>

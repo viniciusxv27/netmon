@@ -16,7 +16,11 @@ use App\Http\Controllers\AppController;
 |
 */
 
-// Rota Padrão
+// Rotas de Dashboard
+
+Route::fallback(function () {
+    return redirect()->route('home');
+});
 
 Route::get('/', [AppController::class, 'index'])->middleware(['auth',])->name('home');
 
@@ -32,10 +36,13 @@ Route::get('/management', [AppController::class, 'management'])->middleware(['au
 Route::get('/help', [AppController::class, 'help'])->middleware(['auth',])->name('help');
 
 Route::get('/networkConfig', [AppController::class, 'networkConfig'])->middleware(['auth',])->name('networkConfig');
-Route::get('configNetwork', [AppController::class, 'configNetwork'])->middleware(['auth',])->name('configNetwork');
+Route::post('configUpdate', [AppController::class, 'configUpdate'])->middleware(['auth',])->name('configUpdate');
+Route::get('/configDelete/{id}', [AppController::class, 'configDelete'])->middleware(['auth',])->name('configDelete');
 
 Route::get('/accountConfig', [AppController::class, 'accountConfig'])->middleware(['auth',])->name('accountConfig');
-Route::get('/configAccount', [AppController::class, 'configAccount'])->middleware(['auth',])->name('configAccount');
+Route::post('/accountUpdate', [AppController::class, 'accountUpdate'])->middleware(['auth',])->name('accountUpdate');
+Route::get('/accountDelete/{id}', [LoginController::class, 'accountDelete'])->middleware('auth')->name('accountDelete');
+
 
 // End Point de Envio de Pacotes
 
@@ -46,33 +53,25 @@ Route::post('/send', [NetworkTrafficController::class, 'send'])->name('send');
 Route::get('/auth/login', function () {
     return view('auth/login');
 })->middleware('guest')->name('login');
-
 Route::post('/auth/login', [LoginController::class, 'authenticate'])->middleware('guest');
 
 
 Route::get('/auth/register', function () {
     return view('auth/register');
 })->middleware('guest')->name('register');
-
 Route::post('/auth/register', [LoginController::class, 'register'])->middleware('guest');
 
 
 Route::get('/auth/forgot', function () {
     return view('auth/forgot');
 })->middleware('guest')->name('forgotpass');
-
 Route::post('/auth/forgot', [LoginController::class, 'forgot'])->middleware('guest')->name('forgotpass');
 
 
 Route::get('/auth/reset-password/{token}', function (string $token) {
     return view('auth.reset-password', ['token' => $token]);
 })->middleware('guest')->name('password.reset');
-
 Route::post('/auth/reset-password', [LoginController::class,'passwordReset'])->middleware('guest')->name('password.update');
 
 
 Route::get('/auth/logout', [LoginController::class, 'logout'])->middleware('auth')->name('logout');
-
-Route::fallback(function () {
-    return redirect()->route('home'); // redireciona para outra rota
-});
