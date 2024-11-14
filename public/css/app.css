@@ -106,6 +106,7 @@ table{
 .main-content {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     gap: 20px;
     flex: 1;
@@ -115,20 +116,12 @@ table{
     transition: margin-left 0.3s ease;
 }
 
-.main-content .btn-d{
-    background-color: #303289;
-    padding: 10px;
-    color: #fff;
-    text-decoration: none;
-    text-align: center;
-}
-
 .main-content.collapsed {
     margin-left: 0;
 }
 
 .main-content .card {
-    background-color: #fff;
+    width: 100% !important;
     border-radius: 25px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -145,27 +138,23 @@ table{
     background-color: #1e1e1e !important;
 }
 
-.card h4 {
-    color: #e65c00;
+.card h4, .card a {
+    color: #fff;
 }
 
-.card p {
-    color: #ff6600;
-}
-
-.form-label {
+.card p, .card .form-label {
     color: #ff6600;
 }
 
 .form-control {
     background-color: #2c2c2c;
-    color: #ff6600;
+    color: #fff;
     border: 0;
 }
 
 .form-control:focus {
     background-color: #2c2c2c;
-    color: #ff6600;
+    color: #fff;
 }
 
 .card .btn {
@@ -181,10 +170,6 @@ table{
 
 .card .btn:hover {
     background-color: #f08700;
-}
-
-.card a{
-    color: #e65c00;
 }
 
 @media (max-width: 768px) {

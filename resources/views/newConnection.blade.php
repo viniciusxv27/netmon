@@ -1,5 +1,5 @@
 <div class="main-content">
-    <div>
+    <div >
         <div class=" card">
             <div class="card-header">
                 <h4 class="card-title"><i class="ph ph-wifi-high"></i> Connect to a new network</h4>
