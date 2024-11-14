@@ -42,26 +42,33 @@ Route::post('/send', [NetworkTrafficController::class, 'send'])->name('send');
 
 Route::get('/auth/login', function () {
     return view('auth/login');
-})->name('login');
+})->middleware('guest')->name('login');
 
-Route::post('/auth/login', [LoginController::class,'authenticate']);
+Route::post('/auth/login', [LoginController::class, 'authenticate'])->middleware('guest');
 
 
 Route::get('/auth/register', function () {
     return view('auth/register');
-})->name('register');
+})->middleware('guest')->name('register');
 
-Route::post('/auth/register', [LoginController::class,'register']);
+Route::post('/auth/register', [LoginController::class, 'register'])->middleware('guest');
 
 
 Route::get('/auth/forgot', function () {
     return view('auth/forgot');
-})->name('forgotpass');
+})->middleware('guest')->name('forgotpass');
 
-Route::post('/auth/forgot', [LoginController::class, 'forgot'])->name('forgotpass');
+Route::post('/auth/forgot', [LoginController::class, 'forgot'])->middleware('guest')->name('forgotpass');
 
 
-Route::get('/auth/logout', [LoginController::class,'logout'])->name('logout');
+Route::get('/auth/reset-password/{token}', function (string $token) {
+    return view('auth.reset-password', ['token' => $token]);
+})->middleware('guest')->name('password.reset');
+
+Route::post('/auth/reset-password', [LoginController::class,'passwordReset'])->middleware('guest')->name('password.update');
+
+
+Route::get('/auth/logout', [LoginController::class, 'logout'])->middleware('auth')->name('logout');
 
 Route::fallback(function () {
     return redirect()->route('home'); // redireciona para outra rota
