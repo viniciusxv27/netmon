@@ -85,4 +85,8 @@ class AppController extends Controller
         return redirect('/newConnection');
     }
 
+    public function networkConfigEdit(Request $request, $id){
+        return $data['network'] = Network::find($id);
+    }
+
 }

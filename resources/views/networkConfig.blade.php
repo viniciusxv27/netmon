@@ -45,3 +45,5 @@
         </div>
     </div>
 </div>
+
+<script src="{{ asset('js/networkConfig.js') }}"></script>
