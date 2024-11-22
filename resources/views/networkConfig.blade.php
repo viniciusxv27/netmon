@@ -29,19 +29,19 @@
 
                     <div class="mb-3 container text-center">
                         <button class="btn btn-primary mb-2" id="submitButton" type="submit"><i class="ph ph-download-simple"></i> Save and generate a new file to download</button>
-                        <button class="btn btn-danger"><i class="ph ph-trash"></i> Delete account</button>
+                        <button class="btn btn-danger"><i class="ph ph-trash"></i> Delete network</button>
                     </div>
                 </form>
-            </div>
-            @if (session()->has('success'))
-                <div class="alert alert-success d-flex align-items-center" role="alert">
-                    <i class="ph ph-check m-2"></i>
-                    <div class="m-2">
-                        {{ session('success') }}
+                @if (session()->has('success'))
+                    <div class="alert alert-success d-flex align-items-center" role="alert">
+                        <i class="ph ph-check m-2"></i>
+                        <div class="m-2">
+                            {{ session('success') }}
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            @endif
+                @endif
+            </div>
         </div>
     </div>
 </div>
