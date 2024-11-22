@@ -39,6 +39,8 @@ Route::get('/networkConfig', [AppController::class, 'networkConfig'])->middlewar
 Route::post('configUpdate', [AppController::class, 'configUpdate'])->middleware(['auth',])->name('configUpdate');
 Route::get('/configDelete/{id}', [AppController::class, 'configDelete'])->middleware(['auth',])->name('configDelete');
 
+Route::get('/getNetwork/{id}', [AppController::class, 'networkConfigEdit'])->middleware(['auth',])->name('networkConfigEdit');
+
 Route::get('/accountConfig', [AppController::class, 'accountConfig'])->middleware(['auth',])->name('accountConfig');
 Route::post('/accountUpdate', [AppController::class, 'accountUpdate'])->middleware(['auth',])->name('accountUpdate');
 Route::get('/accountDelete/{id}', [LoginController::class, 'accountDelete'])->middleware('auth')->name('accountDelete');
