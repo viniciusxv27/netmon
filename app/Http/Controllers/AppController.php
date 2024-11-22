@@ -88,5 +88,14 @@ class AppController extends Controller
     public function networkConfigEdit(Request $request, $id){
         return $data['network'] = Network::find($id);
     }
+    
+    public function connectionConfigEdit(Request $request, $id){
+        $data['network'] = Network::find($id);
+        $data['connections'] = NetworkTraffic::where('network_id', $id)
+        ->get();
+        $data['count'] = NetworkTraffic::where('network_id', $id)->count();
+        
+        return $data;
+    }
 
 }

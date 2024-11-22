@@ -20,7 +20,7 @@
                                 <th>Generated packages</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="networkTable">
                             @foreach ($networks as $network)
                                 <tr class="table-dark">
                                     <td class="table-dark">{{ $network->connection_name }}</td>
@@ -37,3 +37,5 @@
         </div>
     </div>
 </div>
+
+<script src="{{ asset('js/management.js') }}"></script>

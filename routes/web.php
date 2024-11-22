@@ -40,6 +40,7 @@ Route::post('configUpdate', [AppController::class, 'configUpdate'])->middleware(
 Route::get('/configDelete/{id}', [AppController::class, 'configDelete'])->middleware(['auth',])->name('configDelete');
 
 Route::get('/getNetwork/{id}', [AppController::class, 'networkConfigEdit'])->middleware(['auth',])->name('networkConfigEdit');
+Route::get('/getConnections/{id}', [AppController::class, 'connectionConfigEdit'])->middleware(['auth',])->name('connectionConfigEdit');
 
 Route::get('/accountConfig', [AppController::class, 'accountConfig'])->middleware(['auth',])->name('accountConfig');
 Route::post('/accountUpdate', [AppController::class, 'accountUpdate'])->middleware(['auth',])->name('accountUpdate');

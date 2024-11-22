@@ -10,15 +10,11 @@
                     @csrf
                     <div class="mb-3">
                         <label for="name" class="form-label">Name:</label>
-                        <input class="form-control" type="text" name="name" id="name" required>
+                        <input class="form-control" type="text" name="name" id="name" value="{{ auth()->user()->name }}" required>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email:</label>
-                        <input class="form-control" type="email" name="email" id="email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Password:</label>
-                        <input class="form-control" type="password" name="password" id="password" required>
+                        <input class="form-control" type="email" name="email" id="email" value="{{ auth()->user()->email }}" required>
                     </div>
 
                     <div class="mb-3 container text-center">
