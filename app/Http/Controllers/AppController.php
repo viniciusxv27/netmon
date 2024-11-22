@@ -39,6 +39,11 @@ class AppController extends Controller
     public function management(Request $request)
     {
         $data['page'] = 'Management';
+        $data['networks'] = Network::where('user_id', session()->get('user')->id)->get();
+        foreach ($data['networks'] as $network) {
+            $data['connections'][$network->id] = NetworkTraffic::where('network_id', $network->id)
+            ->get();
+        }
 
         return view('__header', $data) . view('management', $data) . view('__footer');
     }

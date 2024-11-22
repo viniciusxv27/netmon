@@ -13,7 +13,7 @@ class CreateNetwotktrafficTable extends Migration
      */
     public function up()
     {
-        Schema::create('netwotktraffic', function (Blueprint $table) {
+        Schema::create('network_traffic', function (Blueprint $table) {
             $table->id();
             $table->foreignId('network_id')->constrained()->onDelete('cascade');
             $table->string('mac_origin');
@@ -38,6 +38,6 @@ class CreateNetwotktrafficTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('netwotktraffic');
+        Schema::dropIfExists('network_traffic');
     }
 }

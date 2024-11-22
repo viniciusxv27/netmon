@@ -22,6 +22,8 @@ class Network extends Authenticatable
         'connection_name',
         'network_name',
         'interface',
+        'status',
+        'mb_used',
     ];
 
     /**
