@@ -30,9 +30,9 @@
                     <strong>Suporte Técnico</strong><br>
                     Caso encontre dificuldades ou tenha dúvidas sobre o uso do Netmon, entre em contato com nosso time de suporte:
                     <br><br>
-                    📧 E-mail: suporte@seudominio.com
+                    📧 E-mail: contato@inovadesenvolvimentos.com.br
                     <br>
-                    📞 Telefone: +55 (11) 99999-9999
+                    📞 Telefone: +55 (27) 99999-9999
                     <br><br>
 
                     Estamos disponíveis de segunda a sexta, das 9h às 18h, para ajudar você a aproveitar ao máximo o Netmon!

@@ -24,7 +24,7 @@
                             @foreach ($networks as $network)
                                 <tr class="table-dark">
                                     <td class="table-dark">{{ $network->connection_name }}</td>
-                                    <td class="table-dark">{{ $network->mb_used }}</td>
+                                    <td class="table-dark">{{ $network->mb_used }}MB</td>
                                     <td class="table-dark">{{ $network->network_name }}</td>
                                     <td class="table-dark">{{ $network->status }}</td>
                                     <td class="table-dark">{{ $connections[$network->id]->count() }}</td>
