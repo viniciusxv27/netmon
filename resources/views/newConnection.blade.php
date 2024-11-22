@@ -29,16 +29,16 @@
                         <a href="manual.pdf">Download the manual of how to install</a>
                     </div>
                 </form>
-            </div>
-            @if (session()->has('success'))
-                <div class="alert alert-success d-flex align-items-center" role="alert">
-                    <i class="ph ph-check m-2"></i>
-                    <div class="m-2">
-                        {{ session('success') }}
+                @if (session()->has('success'))
+                    <div class="alert alert-success d-flex align-items-center" role="alert">
+                        <i class="ph ph-check m-2"></i>
+                        <div class="m-2">
+                            {{ session('success') }}
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            @endif
+                @endif
+            </div>
         </div>
     </div>
 </div>
