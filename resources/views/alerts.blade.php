@@ -14,7 +14,6 @@
                     <p>Frame 5: Src MAC: aa:bb:cc:dd:ee:ff, Dst MAC: ff:ee:dd bb:aa, Src IP: 192.168.1.10, Dst IP: 192.168.1.20, Src Port: 4</p>
                     <div>
                         <a href=""><i class="ph ph-eye"></i></a>
-                        <a href=""><i class="ph ph-broom"></i></a>
                         <a href=""><i class="ph ph-backspace"></i></a>
                         <a href=""><i class="ph ph-shield-warning"></i></a>
                     </div>

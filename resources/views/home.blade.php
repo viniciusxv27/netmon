@@ -13,7 +13,6 @@
                     <p>Frame 5: Src MAC: aa:bb:cc:dd:ee:ff, Dst MAC: ff:ee:dd bb:aa, Src IP: 192.168.1.10, Dst IP: 192.168.1.20, Src Port: 4</p>
                     <div>
                         <a href=""><i class="ph ph-eye"></i></a>
-                        <a href=""><i class="ph ph-broom"></i></a>
                         <a href=""><i class="ph ph-backspace"></i></a>
                         <a href=""><i class="ph ph-shield-warning"></i></a>
                     </div>
@@ -31,19 +30,26 @@
                 return \Carbon\Carbon::now()->addDays($i)->format('d/m');
             }, range(0, 5))) !!},
             datasets: [{
-                label: '# of Votes',
+                label: 'Number of packets per day',
                 data: [12, 19, 3, 5, 2, 3],
                 fill: true,
                 borderColor: 'rgb(232, 97, 0)',
                 borderWidth: 1
+            },
+            {
+                label: 'Number of danger packets per day',
+                data: [5, 10, 15, 20, 25, 30],
+                fill: false,
+                borderColor: 'rgb(255, 0, 0)',
+                borderWidth: 1
             }]
             },
             options: {
-                scales: {
-                    y: {
-                    beginAtZero: true
-                    }
+            scales: {
+                y: {
+                beginAtZero: true
                 }
+            }
             }
         });
     </script>
