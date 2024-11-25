@@ -5,34 +5,34 @@
                 <fieldset>Security</fieldset>
                 <div class="notification">
                     <p>
-                        Ao adicionar o arquivo Sniffer ao seu sistema, é essencial estar ciente de alguns pontos críticos relacionados à segurança e privacidade de sua rede. O Sniffer X é uma ferramenta avançada para monitoramento de tráfego e análise de pacotes de dados, e seu uso exige responsabilidade e atenção para evitar vulnerabilidades ou uso indevido.
+                        When adding the Sniffer file to your system, it is essential to be aware of some critical points related to the security and privacy of your network. Sniffer X is an advanced tool for traffic monitoring and data packet analysis, and its use requires responsibility and attention to avoid vulnerabilities or misuse.
                         <br><br>
-                        Pontos de Atenção:
-                        Uso Ético e Legal:
-                        Certifique-se de que o uso do Netmon está de acordo com as leis e regulamentações locais de sua região. Monitorar o tráfego de terceiros sem consentimento pode ser considerado uma violação legal em muitos países.
+                        Points of Attention:
+                        Ethical and Legal Use:
+                        Ensure that the use of Netmon complies with the local laws and regulations of your region. Monitoring third-party traffic without consent can be considered a legal violation in many countries.
                         <br><br>
-                        Impacto na Privacidade:
-                        O Netmon é capaz de capturar dados sensíveis transmitidos pela rede. Garanta que a ferramenta seja usada apenas para finalidades específicas e autorizadas, como auditorias de segurança ou diagnóstico de problemas.
+                        Privacy Impact:
+                        Netmon is capable of capturing sensitive data transmitted over the network. Ensure that the tool is used only for specific and authorized purposes, such as security audits or troubleshooting.
                         <br><br>
-                        Risco de Exposição:
-                        Se não for configurado adequadamente, o Netmon pode se tornar um ponto de vulnerabilidade em sua rede, expondo informações críticas a invasores. Mantenha-o protegido com credenciais seguras e limitado a usuários autorizados.
+                        Risk of Exposure:
+                        If not properly configured, Netmon can become a vulnerability point in your network, exposing critical information to attackers. Keep it protected with secure credentials and limited to authorized users.
                         <br><br>
-                        Proteção do Sistema:
-                        Antes de implementar o Netmon, verifique se o sistema X está atualizado e protegido contra ataques externos. Além disso, realize testes em um ambiente controlado para garantir que a ferramenta não comprometa o desempenho ou a segurança da rede.
+                        System Protection:
+                        Before implementing Netmon, ensure that system X is up-to-date and protected against external attacks. Additionally, conduct tests in a controlled environment to ensure that the tool does not compromise network performance or security.
                         <br><br>
-                        Registro de Logs:
-                        O uso do Netmon gera um volume significativo de logs. Certifique-se de armazená-los em um local seguro, com acesso restrito, para evitar vazamento de informações.
+                        Log Recording:
+                        The use of Netmon generates a significant volume of logs. Ensure that they are stored in a secure location with restricted access to prevent information leaks.
                         <br><br>
-                        Recomendações de Segurança:
-                        Ative criptografia em todos os canais de comunicação sensíveis.
-                        Limite o acesso à ferramenta aos administradores de rede.
-                        Realize auditorias periódicas para verificar o uso correto do Netmon.
-                        Consulte especialistas em segurança da informação para acompanhar as melhores práticas.
-                        O uso responsável do Netmon é fundamental para garantir que sua rede permaneça segura enquanto você aproveita os benefícios da análise detalhada de tráfego.
+                        Security Recommendations:
+                        Enable encryption on all sensitive communication channels.
+                        Limit access to the tool to network administrators.
+                        Conduct periodic audits to verify the correct use of Netmon.
+                        Consult information security experts to follow best practices.
+                        Responsible use of Netmon is essential to ensure that your network remains secure while you enjoy the benefits of detailed traffic analysis.
                         <br><br>
-                        Se tiver dúvidas ou precisar de suporte técnico, entre em contato com nossa equipe.
+                        If you have any questions or need technical support, please contact our team.
                         <br><br>
-                        Este texto foi desenvolvido para orientar o uso responsável do Netmon dentro de sua aba de Security, promovendo transparência e conscientização aos usuários.
+                        This text was developed to guide the responsible use of Netmon within your Security tab, promoting transparency and awareness among users.
                     </p>
             </div>
         </div>

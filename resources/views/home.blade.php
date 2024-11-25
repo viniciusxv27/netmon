@@ -1,6 +1,6 @@
 <div class="main-content">
     <div class="container">
-        <h4><i class="ph ph-hand-waving"></i> Olá, {{ session()->get('user')->name }}!</h4>
+        <h4><i class="ph ph-hand-waving"></i> Hello, {{ session()->get('user')->name }}!</h4>
         <div class="card">
             <fieldset>Graphic</fieldset>
             <div class="card-header">

@@ -5,37 +5,37 @@
                 <fieldset>Help</fieldset>
                 <div class="notification">
                     <p>
-                    Bem-vindo ao tutorial de uso do Netmon! Aqui, você encontrará um guia passo a passo para utilizar esta poderosa ferramenta de monitoramento de tráfego em sua rede com segurança e eficiência.
+                    Welcome to the Netmon usage tutorial! Here, you will find a step-by-step guide to using this powerful network traffic monitoring tool safely and efficiently.
                     <br><br>
-                    Passo 1: Instalação do Netmon
-                    Baixe o arquivo diretamente de nossa página de downloads ou por meio do painel do sistema.
-                    Instale a ferramenta seguindo as instruções fornecidas no instalador. Certifique-se de ter permissões administrativas para concluir a instalação.
-                    Após a instalação, reinicie o sistema para garantir que todas as configurações sejam aplicadas corretamente.
+                    Step 1: Installing Netmon
+                    Download the file directly from our download page or through the system panel.
+                    Install the tool following the instructions provided in the installer. Make sure you have administrative permissions to complete the installation.
+                    After installation, restart the system to ensure all settings are applied correctly.
                     <br><br>
-                    Passo 2: Configuração Inicial
-                    Acesse o Netmon pelo menu de ferramentas ou pela aba Security do seu software.
-                    Adicione sua rede local e o endereço IP do dispositivo que deseja monitorar.
-                    Ative os alertas de segurança para ser notificado de comportamentos suspeitos.
+                    Step 2: Initial Configuration
+                    Access Netmon from the tools menu or the Security tab of your software.
+                    Add your local network and the IP address of the device you want to monitor.
+                    Enable security alerts to be notified of suspicious behavior.
                     <br><br>
-                    Passo 3: Monitoramento de Rede
-                    Clique em Iniciar Monitoramento para capturar o tráfego em tempo real.
-                    Visualize os dados capturados na interface principal, que exibe detalhes como origem, destino, e tipo de pacote.
-                    Use as ferramentas de análise para identificar possíveis ameaças ou gargalos na rede.
+                    Step 3: Network Monitoring
+                    Click Start Monitoring to capture traffic in real-time.
+                    View the captured data in the main interface, which displays details such as source, destination, and packet type.
+                    Use the analysis tools to identify potential threats or bottlenecks in the network.
                     <br><br>
-                    Passo 4: Boas Práticas de Segurança
-                    Não monitore redes sem autorização: Garanta que você tem permissão para utilizar a ferramenta no ambiente configurado.
-                    Proteja os dados capturados: Armazene logs em locais seguros com acesso restrito.
-                    Atualize a ferramenta regularmente: Verifique se está utilizando a versão mais recente do Netmon para aproveitar melhorias e correções de segurança.
+                    Step 4: Security Best Practices
+                    Do not monitor networks without authorization: Ensure you have permission to use the tool in the configured environment.
+                    Protect captured data: Store logs in secure locations with restricted access.
+                    Update the tool regularly: Make sure you are using the latest version of Netmon to take advantage of improvements and security fixes.
                     <br><br>
-                    <strong>Suporte Técnico</strong><br>
-                    Caso encontre dificuldades ou tenha dúvidas sobre o uso do Netmon, entre em contato com nosso time de suporte:
+                    <strong>Technical Support</strong><br>
+                    If you encounter difficulties or have questions about using Netmon, contact our support team:
                     <br><br>
-                    📧 E-mail: contato@inovadesenvolvimentos.com.br
+                    📧 Email: contato@inovadesenvolvimentos.com.br
                     <br>
-                    📞 Telefone: +55 (27) 99999-9999
+                    📞 Phone: +55 (27) 99999-9999
                     <br><br>
 
-                    Estamos disponíveis de segunda a sexta, das 9h às 18h, para ajudar você a aproveitar ao máximo o Netmon!
+                    We are available from Monday to Friday, from 9 am to 6 pm, to help you make the most of Netmon!
                     </p>
             </div>
         </div>
