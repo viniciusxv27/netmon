@@ -29,7 +29,8 @@ class NetworkTraffic extends Authenticatable
         'origin_port',
         'destination_port',
         'flag',
-        'application_protocol'
+        'application_protocol',
+        'is_danger',
     ];
 
     /**

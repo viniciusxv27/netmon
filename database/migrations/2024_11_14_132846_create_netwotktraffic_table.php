@@ -27,6 +27,7 @@ class CreateNetwotktrafficTable extends Migration
             $table->string('destination_port');
             $table->string('flag');
             $table->string('application_protocol');
+            $table->boolean('is_danger')->default(false);
             $table->timestamps();
         });
     }
