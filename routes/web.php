@@ -42,7 +42,7 @@ Route::post('/packetDanger', [AppController::class, 'packetDanger'])->middleware
 
 Route::get('/networkConfig', [AppController::class, 'networkConfig'])->middleware(['auth',])->name('networkConfig');
 Route::post('networkUpdate', [AppController::class, 'networkUpdate'])->middleware(['auth',])->name('networkUpdate');
-Route::get('/networkDelete', [AppController::class, 'networkDelete'])->middleware(['auth',])->name('networkDelete');
+Route::get('/networkDelete/{id}', [AppController::class, 'networkDelete'])->middleware(['auth',])->name('networkDelete');
 
 // Rotas de Configuração (API)
 Route::get('/getNetwork/{id}', [AppController::class, 'networkConfigEdit'])->middleware(['auth',])->name('networkConfigEdit');

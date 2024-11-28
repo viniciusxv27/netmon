@@ -64,18 +64,33 @@ class AppController extends Controller
     public function networkUpdate(Request $request)
     {
         $data = $request->validate([
+            'networkSelect' => 'required',
             'connection_name'=> 'required',
             'network_name'=> 'required',
             'interface'=> 'required',
         ]);
 
-        $network = Network::find($request->id);
+        $network = Network::find($data['networkSelect']);
         $network->connection_name = $data['connection_name'];
         $network->network_name = $data['network_name'];
         $network->interface = $data['interface'];
         $network->save();
 
         session()->flash('success','Network updated successfully!');
+
+        return redirect('/networkConfig');
+    }
+
+    public function networkDelete(Request $request, $id)
+    {
+        $data = $request->validate([
+            'networkSelect' => 'required',
+        ]);
+
+        $network = Network::find($data['networkSelect']);
+        $network->delete();
+
+        session()->flash('success','Network deleted successfully!');
 
         return redirect('/networkConfig');
     }

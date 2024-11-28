@@ -6,13 +6,13 @@
                 <hr>
             </div>
             <div class="card-body">
-                <select class="mb-3 form-select" name="networkSelect" id="networkSelect">
-                    <option value="0">Select a network</option>
-                    @foreach ($networks as $network)
-                        <option value="{{ $network->id }}">{{ $network->network_name }}</option>
-                    @endforeach
-                </select>
                 <form action="{{ route('networkUpdate') }}" id="configNetworkForm" method="post">
+                    <select class="mb-3 form-select" name="networkSelect" id="networkSelect">
+                        <option value="0">Select a network</option>
+                        @foreach ($networks as $network)
+                            <option value="{{ $network->id }}">{{ $network->network_name }}</option>
+                        @endforeach
+                    </select>
                     @csrf
                     <div class="mb-3">
                         <label for="connection_name" class="form-label">Connection name:</label>
@@ -29,7 +29,7 @@
 
                     <div class="mb-3 container text-center">
                         <button class="btn btn-primary mb-2" id="submitButton" type="submit"><i class="ph ph-download-simple"></i> Save and generate a new file to download</button>
-                        <button class="btn btn-danger"><i class="ph ph-trash"></i> Delete network</button>
+                        <a href="{{ route('networkDelete') }}" class="btn btn-danger"><i class="ph ph-trash"></i> Delete network</a>
                     </div>
                 </form>
                 @if (session()->has('success'))
