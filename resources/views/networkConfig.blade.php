@@ -12,7 +12,7 @@
                         <option value="{{ $network->id }}">{{ $network->network_name }}</option>
                     @endforeach
                 </select>
-                <form action="{{ route('configUpdate') }}" id="configNetworkForm" method="post">
+                <form action="{{ route('networkUpdate') }}" id="configNetworkForm" method="post">
                     @csrf
                     <div class="mb-3">
                         <label for="connection_name" class="form-label">Connection name:</label>

@@ -60,12 +60,59 @@ class AppController extends Controller
 
         return view('__header', $data) . view('networkConfig', $data) . view('__footer');
     }
+
+    public function networkUpdate(Request $request)
+    {
+        $data = $request->validate([
+            'connection_name'=> 'required',
+            'network_name'=> 'required',
+            'interface'=> 'required',
+        ]);
+
+        $network = Network::find($request->id);
+        $network->connection_name = $data['connection_name'];
+        $network->network_name = $data['network_name'];
+        $network->interface = $data['interface'];
+        $network->save();
+
+        session()->flash('success','Network updated successfully!');
+
+        return redirect('/networkConfig');
+    }
     
     public function accountConfig(Request $request)
     {
         $data['page'] = 'Account Configs';
 
         return view('__header', $data) . view('accountConfig', $data) . view('__footer');
+    }
+
+    public function accountUpdate(Request $request)
+    {
+        $data = $request->validate([
+            'name'=> 'required',
+            'email'=> 'required',
+        ]);
+
+        $user = User::find(session()->get('user')->id);
+        $user->name = $data['name'];
+        $user->email = $data['email'];
+        $user->save();
+
+        session()->flash('success','Account updated successfully!');
+
+        return redirect('/accountConfig');
+    }
+
+    public function accountDelete(Request $request)
+    {   
+        $user = User::find(session()->get('user')->id);
+
+        $user->delete();
+
+        session()->flash('success','Account deleted successfully!');
+
+        return redirect('/auth/login');
     }
 
     public function createConnection(Request $request)

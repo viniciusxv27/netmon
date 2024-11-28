@@ -35,16 +35,22 @@ Route::get('/management', [AppController::class, 'management'])->middleware(['au
 
 Route::get('/help', [AppController::class, 'help'])->middleware(['auth',])->name('help');
 
-Route::get('/networkConfig', [AppController::class, 'networkConfig'])->middleware(['auth',])->name('networkConfig');
-Route::post('configUpdate', [AppController::class, 'configUpdate'])->middleware(['auth',])->name('configUpdate');
-Route::get('/configDelete/{id}', [AppController::class, 'configDelete'])->middleware(['auth',])->name('configDelete');
+Route::get('/packet/{id}', [AppController::class, 'packetView'])->middleware(['auth',])->name('packetView');
+Route::post('/packetDelete', [AppController::class, 'packetDelete'])->middleware(['auth',])->name('packetDelete');
+Route::post('/packetDanger', [AppController::class, 'packetDanger'])->middleware(['auth',])->name('packetDanger');
 
+
+Route::get('/networkConfig', [AppController::class, 'networkConfig'])->middleware(['auth',])->name('networkConfig');
+Route::post('networkUpdate', [AppController::class, 'networkUpdate'])->middleware(['auth',])->name('networkUpdate');
+Route::get('/networkDelete', [AppController::class, 'networkDelete'])->middleware(['auth',])->name('networkDelete');
+
+// Rotas de Configuração (API)
 Route::get('/getNetwork/{id}', [AppController::class, 'networkConfigEdit'])->middleware(['auth',])->name('networkConfigEdit');
 Route::get('/getConnections/{id}', [AppController::class, 'connectionConfigEdit'])->middleware(['auth',])->name('connectionConfigEdit');
 
 Route::get('/accountConfig', [AppController::class, 'accountConfig'])->middleware(['auth',])->name('accountConfig');
 Route::post('/accountUpdate', [AppController::class, 'accountUpdate'])->middleware(['auth',])->name('accountUpdate');
-Route::get('/accountDelete/{id}', [LoginController::class, 'accountDelete'])->middleware('auth')->name('accountDelete');
+Route::get('/accountDelete', [AppController::class, 'accountDelete'])->middleware('auth')->name('accountDelete');
 
 
 // End Point de Envio de Pacotes
