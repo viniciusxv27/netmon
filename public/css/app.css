@@ -205,6 +205,11 @@ table {
     color: #fff;
 }
 
+.notification_danger{
+    border-top: 1px solid #ff3333 !important;
+    border-bottom: 1px solid #ff3333 !important;
+}
+
 .notification {
     display: flex;
     justify-content: space-around;
@@ -221,6 +226,7 @@ table {
 .notification p {
     color: #fff;
     margin: 0;
+    font-size: 14px;
 }
 
 .notification a {

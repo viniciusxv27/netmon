@@ -20,6 +20,7 @@ class CreateNetworksTable extends Migration
             $table->string('network_name');
             $table->string('interface');
             $table->string('status')->default('down');
+            $table->boolean('default')->default(false);
             $table->string('mb_used')->default(0);
             $table->timestamps();
         });

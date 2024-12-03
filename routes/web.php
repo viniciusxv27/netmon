@@ -35,9 +35,9 @@ Route::get('/management', [AppController::class, 'management'])->middleware(['au
 
 Route::get('/help', [AppController::class, 'help'])->middleware(['auth',])->name('help');
 
-Route::get('/packet/{id}', [AppController::class, 'packetView'])->middleware(['auth',])->name('packetView');
-Route::post('/packetDelete', [AppController::class, 'packetDelete'])->middleware(['auth',])->name('packetDelete');
-Route::post('/packetDanger', [AppController::class, 'packetDanger'])->middleware(['auth',])->name('packetDanger');
+Route::get('/viewPacket/{id}', [AppController::class, 'viewPacket'])->middleware(['auth',])->name('packetView');
+Route::get('/deletePacket/{id}', [AppController::class, 'deletePacket'])->middleware(['auth',])->name('packetDelete');
+Route::get('/dangerPacket/{id}', [AppController::class, 'dangerPacket'])->middleware(['auth',])->name('packetDanger');
 
 
 Route::get('/networkConfig', [AppController::class, 'networkConfig'])->middleware(['auth',])->name('networkConfig');

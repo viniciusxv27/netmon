@@ -13,14 +13,25 @@ class AppController extends Controller
 
     public function index(Request $request)
     {
+        $data['connection'] = [];
         $data['page'] = 'Home';
         $data['user'] = User::find(session()->get('user'));
-
+        $data['network'] = Network::where('user_id', session()->get('user')->id)->where('default', true)->first();
+        if ($data['network']) {
+            $data['connection'] = NetworkTraffic::where('network_id', $data['network']->id)->get();
+        }
+        
         return view('__header', $data) . view('home', $data) . view('__footer');
     }
     public function alerts(Request $request)
     {
+        $data['connection'] = [];
         $data['page'] = 'Alerts';
+        $data['network'] = Network::where('user_id', session()->get('user')->id)->first();
+        if ($data['network']) {
+            $data['connection'] = NetworkTraffic::where('network_id', $data['network']->id)->get();
+            $data['count_danger'] = NetworkTraffic::where('network_id', $data['network']->id)->where('is_danger', 1)->count();
+        }
 
         return view('__header', $data) . view('alerts', $data) . view('__footer');
     }
@@ -42,7 +53,7 @@ class AppController extends Controller
         $data['networks'] = Network::where('user_id', session()->get('user')->id)->get();
         foreach ($data['networks'] as $network) {
             $data['connections'][$network->id] = NetworkTraffic::where('network_id', $network->id)
-            ->get();
+                ->get();
         }
 
         return view('__header', $data) . view('management', $data) . view('__footer');
@@ -65,9 +76,9 @@ class AppController extends Controller
     {
         $data = $request->validate([
             'networkSelect' => 'required',
-            'connection_name'=> 'required',
-            'network_name'=> 'required',
-            'interface'=> 'required',
+            'connection_name' => 'required',
+            'network_name' => 'required',
+            'interface' => 'required',
         ]);
 
         $network = Network::find($data['networkSelect']);
@@ -76,7 +87,7 @@ class AppController extends Controller
         $network->interface = $data['interface'];
         $network->save();
 
-        session()->flash('success','Network updated successfully!');
+        session()->flash('success', 'Network updated successfully!');
 
         return redirect('/networkConfig');
     }
@@ -87,11 +98,11 @@ class AppController extends Controller
         $network = Network::find($id);
         $network->delete();
 
-        session()->flash('success','Network deleted successfully!');
+        session()->flash('success', 'Network deleted successfully!');
 
         return redirect('/networkConfig');
     }
-    
+
     public function accountConfig(Request $request)
     {
         $data['page'] = 'Account Configs';
@@ -102,8 +113,8 @@ class AppController extends Controller
     public function accountUpdate(Request $request)
     {
         $data = $request->validate([
-            'name'=> 'required',
-            'email'=> 'required',
+            'name' => 'required',
+            'email' => 'required',
         ]);
 
         $user = User::find(session()->get('user')->id);
@@ -111,18 +122,18 @@ class AppController extends Controller
         $user->email = $data['email'];
         $user->save();
 
-        session()->flash('success','Account updated successfully!');
+        session()->flash('success', 'Account updated successfully!');
 
         return redirect('/accountConfig');
     }
 
     public function accountDelete(Request $request)
-    {   
+    {
         $user = User::find(session()->get('user')->id);
 
         $user->delete();
 
-        session()->flash('success','Account deleted successfully!');
+        session()->flash('success', 'Account deleted successfully!');
 
         return redirect('/auth/login');
     }
@@ -130,31 +141,67 @@ class AppController extends Controller
     public function createConnection(Request $request)
     {
         $data = $request->validate([
-            'connection_name'=> 'required',
-            'network_name'=> 'required',
-            'interface'=> 'required',
+            'connection_name' => 'required',
+            'network_name' => 'required',
+            'interface' => 'required',
         ]);
 
         $data['user_id'] = session()->get('user')->id;
 
         Network::create($data);
 
-        session()->flash('success','Connection created successfully!');
+        session()->flash('success', 'Connection created successfully!');
 
         return redirect('/newConnection');
     }
 
-    public function networkConfigEdit(Request $request, $id){
+    public function networkConfigEdit(Request $request, $id)
+    {
         return $data['network'] = Network::find($id);
     }
-    
-    public function connectionConfigEdit(Request $request, $id){
+
+    public function connectionConfigEdit(Request $request, $id)
+    {
         $data['network'] = Network::find($id);
         $data['connections'] = NetworkTraffic::where('network_id', $id)
-        ->get();
+            ->get();
         $data['count'] = NetworkTraffic::where('network_id', $id)->count();
-        
+
         return $data;
+    }
+
+    // PACKETS
+
+    public function viewPacket(Request $request, $id)
+    {
+        $data['packet'] = NetworkTraffic::find($id);
+
+        return $data;
+    }
+
+    public function deletePacket(Request $request, $id)
+    {
+        $packet = NetworkTraffic::find($id);
+        $packet->delete();
+
+        session()->flash('success', 'Packet deleted successfully!');
+
+        return redirect('/');
+    }
+
+    public function dangerPacket(Request $request, $id)
+    {
+        $packet = NetworkTraffic::find($id);
+        if($packet->is_danger == 1){
+            $packet->is_danger = 0;
+        } else {
+            $packet->is_danger = 1;
+        }
+        $packet->save();
+
+        session()->flash('success', 'Packet marked as dangerous!');
+
+        return redirect('/');
     }
 
 }

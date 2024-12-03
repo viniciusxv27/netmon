@@ -4,7 +4,7 @@
             <div class="card-body">
                 <div class="text-left">
                     <select class="mb-3 form-select text-left" name="networkSelect" id="networkSelect">
-                        <option value="0">Filtered by Network</option>
+                        <option value="0">Filter by network name</option>
                         @foreach ($networks as $network)
                             <option value="{{ $network->id }}">{{ $network->network_name }}</option>
                         @endforeach
@@ -14,10 +14,11 @@
                         <thead>
                             <tr class="table-dark">
                                 <th>Your connections</th>
-                                <th>MB Used</th>
+                                <th>MB used</th>
                                 <th>Network name</th>
                                 <th>Status</th>
                                 <th>Generated packages</th>
+                                <th>Set default</th>
                             </tr>
                         </thead>
                         <tbody id="networkTable">
@@ -28,6 +29,14 @@
                                     <td class="table-dark">{{ $network->network_name }}</td>
                                     <td class="table-dark">{{ $network->status }}</td>
                                     <td class="table-dark">{{ $connections[$network->id]->count() }}</td>
+                                    <td class="table-dark">
+                                        @if ($network->default == 1)
+                                            <button class="btn btn-primary btn-sm" disabled>Set default</button>
+                                        @else
+                                            <button class="btn btn-primary btn-sm"
+                                                onclick="setDefault({{ $network->id }})">Set default</button>
+                                        @endif
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

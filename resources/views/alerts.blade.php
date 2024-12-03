@@ -4,20 +4,27 @@
             <fieldset>Alerts</fieldset>
             <div class="card-header">
                 <div>
-                    <h3><i class="ph ph-shield-warning"></i> You have 2 dangers packets to investigate</h3>
+                    <h3><i class="ph ph-shield-warning"></i> You have {{ $count_danger }} dangers packets to investigate
+                    </h3>
                 </div>
             </div>
             <div class="card-body">
                 <hr>
-                <fieldset>Criticals Traffics of Network 1</fieldset>
-                <div class="notification">
-                    <p>Frame 5: Src MAC: aa:bb:cc:dd:ee:ff, Dst MAC: ff:ee:dd bb:aa, Src IP: 192.168.1.10, Dst IP: 192.168.1.20, Src Port: 4</p>
-                    <div>
-                        <a href=""><i class="ph ph-eye"></i></a>
-                        <a href=""><i class="ph ph-backspace"></i></a>
-                        <a href=""><i class="ph ph-shield-warning"></i></a>
-                    </div>
-                </div>
+                <fieldset>Criticals Traffics of Default Network</fieldset>
+                @foreach ($connection as $packet)
+                    @if ($packet->is_danger == 1)
+                        <div class="notification notification_danger">
+                            <p>Protocol {{ $packet->protocol }}: Src MAC: {{ $packet->mac_origin }}, Dst MAC:
+                                {{ $packet->mac_destination }}, Src IP: {{ $packet->ip_origin }}, Dst IP:
+                                {{ $packet->ip_destination }}, Src Port: {{ $packet->origin_port }}</p>
+                            <div>
+                                <a href="viewPacket/{{ $packet->id }}"><i class="ph ph-tree-structure"></i></a>
+                                <a href="deletePacket/{{ $packet->id }}"><i class="ph ph-backspace"></i></a>
+                                <a href="dangerPacket/{{ $packet->id }}"><i class="ph ph-shield-warning"></i></a>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
         </div>
     </div>
 </div>

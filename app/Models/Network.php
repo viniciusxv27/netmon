@@ -23,6 +23,7 @@ class Network extends Authenticatable
         'network_name',
         'interface',
         'status',
+        'default',
         'mb_used',
     ];
 
