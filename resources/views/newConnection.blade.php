@@ -26,7 +26,7 @@
                     </div>
 
                     <div class="mb-3 container text-center">
-                        <a href="manual.pdf">Download the manual of how to install</a>
+                        <a href="{{ asset('documents/tutorial.txt') }}" download>Download the manual of how to install</a>
                     </div>
                 </form>
                 @if (session()->has('success'))
