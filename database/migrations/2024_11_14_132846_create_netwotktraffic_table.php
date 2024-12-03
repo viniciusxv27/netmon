@@ -22,6 +22,7 @@ class CreateNetwotktrafficTable extends Migration
             $table->string('ip_origin');
             $table->string('ip_destination');
             $table->string('protocol');
+            $table->string('payload');
             $table->string('ttl');
             $table->string('origin_port');
             $table->string('destination_port');

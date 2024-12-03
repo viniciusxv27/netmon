@@ -20,7 +20,7 @@ class AppController extends Controller
         if ($data['network']) {
             $data['connection'] = NetworkTraffic::where('network_id', $data['network']->id)->get();
         }
-        
+
         return view('__header', $data) . view('home', $data) . view('__footer');
     }
     public function alerts(Request $request)
@@ -59,11 +59,11 @@ class AppController extends Controller
         return view('__header', $data) . view('management', $data) . view('__footer');
     }
 
-    public function setDefault(Request $request, $id) 
+    public function setDefault(Request $request, $id)
     {
 
-        Network::where('user_id', session()->get('user')->id)->where('id', $id)->update(['default'=> true]);
-        Network::where('user_id', session()->get('user')->id)->where('id', '!=', $id)->update(['default'=> false]);
+        Network::where('user_id', session()->get('user')->id)->where('id', $id)->update(['default' => true]);
+        Network::where('user_id', session()->get('user')->id)->where('id', '!=', $id)->update(['default' => false]);
 
         return ['status' => 'success'];
     }
@@ -182,6 +182,30 @@ class AppController extends Controller
 
     // PACKETS
 
+    public function getPackets(Request $request)
+    {
+        $data['network'] = Network::where('user_id', session()->get('user')->id)->where('default', true)->first();
+        $data['packets'] = NetworkTraffic::where('network_id', $data['network']->id)
+            ->where('created_at', '>=', now()->subDays(7))
+            ->get()
+            ->groupBy(function ($item) {
+                return $item->is_danger ? 'danger' : 'standard';
+            });
+        $data['packets_per_day'] = NetworkTraffic::where('network_id', $data['network']->id)
+            ->where('created_at', '>=', now()->subDays(7))
+            ->get()
+            ->groupBy(function ($item) {
+            return $item->created_at->format('Y-m-d');
+            })
+            ->map(function ($day) {
+            return [
+                'total' => $day->count(),
+                'danger' => $day->where('is_danger', 1)->count(),
+            ];
+            });
+        return json_encode($data);
+    }
+
     public function viewPacket(Request $request, $id)
     {
         $data['packet'] = NetworkTraffic::find($id);
@@ -202,7 +226,7 @@ class AppController extends Controller
     public function dangerPacket(Request $request, $id)
     {
         $packet = NetworkTraffic::find($id);
-        if($packet->is_danger == 1){
+        if ($packet->is_danger == 1) {
             $packet->is_danger = 0;
         } else {
             $packet->is_danger = 1;

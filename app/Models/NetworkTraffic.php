@@ -25,6 +25,7 @@ class NetworkTraffic extends Authenticatable
         'ip_origin',
         'ip_destination',
         'protocol',
+        'payload',
         'ttl',
         'origin_port',
         'destination_port',
