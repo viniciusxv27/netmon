@@ -58,6 +58,16 @@ class AppController extends Controller
 
         return view('__header', $data) . view('management', $data) . view('__footer');
     }
+
+    public function setDefault(Request $request, $id) 
+    {
+
+        Network::where('user_id', session()->get('user')->id)->where('id', $id)->update(['default'=> true]);
+        Network::where('user_id', session()->get('user')->id)->where('id', '!=', $id)->update(['default'=> false]);
+
+        return ['status' => 'success'];
+    }
+
     public function help(Request $request)
     {
         $data['page'] = 'Help';

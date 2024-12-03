@@ -32,6 +32,7 @@ Route::post('/newConnection', [AppController::class, 'createConnection'])->middl
 Route::get('/security', [AppController::class, 'security'])->middleware(['auth',])->name('security');
 
 Route::get('/management', [AppController::class, 'management'])->middleware(['auth',])->name('management');
+Route::get('/setDefault/{id}', [AppController::class, 'setDefault'])->middleware(['auth',])->name('setDefault');
 
 Route::get('/help', [AppController::class, 'help'])->middleware(['auth',])->name('help');
 
