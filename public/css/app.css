@@ -164,6 +164,10 @@ table {
     color: #fff;
 }
 
+#deleteNetworkButton{
+    cursor: pointer;
+}
+
 .card .btn-primary {
     width: 100%;
     background-color: #e65c00;

@@ -29,7 +29,7 @@
 
                     <div class="mb-3 container text-center">
                         <button class="btn btn-primary mb-2" id="submitButton" type="submit"><i class="ph ph-download-simple"></i> Save and generate a new file to download</button>
-                        <a href="{{ route('networkDelete') }}" class="btn btn-danger"><i class="ph ph-trash"></i> Delete network</a>
+                        <span class="btn btn-danger mb-2" id="deleteNetworkButton"><i class="ph ph-trash"></i> Delete network</span>
                     </div>
                 </form>
                 @if (session()->has('success'))

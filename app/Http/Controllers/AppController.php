@@ -83,11 +83,8 @@ class AppController extends Controller
 
     public function networkDelete(Request $request, $id)
     {
-        $data = $request->validate([
-            'networkSelect' => 'required',
-        ]);
 
-        $network = Network::find($data['networkSelect']);
+        $network = Network::find($id);
         $network->delete();
 
         session()->flash('success','Network deleted successfully!');
