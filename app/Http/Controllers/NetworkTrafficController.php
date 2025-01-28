@@ -21,16 +21,16 @@ class NetworkTrafficController extends Controller
         $networkTraffic->ip_origin = $data['ip_origem'];
         $networkTraffic->ip_destination = $data['ip_destino'];
         $networkTraffic->protocol = $data['protocolo'];
+        $networkTraffic->payload = $data['payload'];
         $networkTraffic->application_protocol = $data['protocolo'];
         $networkTraffic->origin_port = $data['porta_origem'];
         $networkTraffic->destination_port = $data['porta_destino'];
-        $networkTraffic->payload = $data['payload'];
         $networkTraffic->network_id = $data['network_id'];
         $networkTraffic->save();
 
         $network = Network::find($data['network_id']);
         $network->status = 'up';
-        $network->mb_used = NetworkTraffic::where('network_id', $data['network_id'])->sum('payload') / (1024 * 1024);
+        $network->mb_used = 1;
         $network->save();
 
         return ['status' => 'success'];

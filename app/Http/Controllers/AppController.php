@@ -158,7 +158,9 @@ class AppController extends Controller
 
         $data['user_id'] = session()->get('user')->id;
 
-        Network::create($data);
+        $network = Network::create($data);
+        
+        $data['network_id'] = $network->id;
 
         session()->flash('success', 'Connection created successfully!');
 
